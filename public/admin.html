@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم — by-sou</title>
+
+    <link rel="icon" type="image/jpeg" href="by-sou.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<header class="admin-topbar">
+    <div class="logo">
+        by-<span>sou</span>
+        <small>لوحة التحكم</small>
+    </div>
+
+    <a href="index.html" class="back-to-site">
+        <i class="fa-solid fa-arrow-right"></i>
+        عرض الموقع
+    </a>
+</header>
+
+<div class="admin-layout">
+
+    <!-- Form -->
+    <section class="panel">
+        <h2 id="form-title">إضافة منتج جديد</h2>
+        <p class="panel-subtitle">املئي بيانات المنتج وهيظهر فوراً في صفحة المنتجات</p>
+
+        <form id="product-form" novalidate>
+
+            <div class="field">
+                <label for="p-name">اسم المنتج</label>
+                <input type="text" id="p-name" placeholder="مثال: Velvet Rose Lipstick" required>
+            </div>
+
+            <div class="two-col">
+                <div class="field">
+                    <label for="p-price">السعر (جنيه)</label>
+                    <input type="number" id="p-price" min="0" step="1" placeholder="320" required>
+                </div>
+                <div class="field">
+                    <label for="p-old-price">السعر قبل الخصم (اختياري)</label>
+                    <input type="number" id="p-old-price" min="0" step="1" placeholder="400">
+                </div>
+            </div>
+
+            <div class="field">
+                <label>التقييم</label>
+                <div class="star-select" id="star-select">
+                    <button type="button" data-value="1">☆</button>
+                    <button type="button" data-value="2">☆</button>
+                    <button type="button" data-value="3">☆</button>
+                    <button type="button" data-value="4">☆</button>
+                    <button type="button" data-value="5">☆</button>
+                </div>
+                <input type="hidden" id="p-rating" value="5">
+            </div>
+
+            <div class="field">
+                <label>صورة المنتج</label>
+                <div class="image-type-toggle">
+                    <label>
+                        <input type="radio" name="image-type" id="type-emoji" value="emoji" checked>
+                        <span class="image-type-btn">رمز تعبيري</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="image-type" id="type-photo" value="photo">
+                        <span class="image-type-btn">رفع صورة</span>
+                    </label>
+                </div>
+
+                <div id="emoji-field">
+                    <input type="text" id="p-emoji" maxlength="4" placeholder="💄" value="💄">
+                </div>
+
+                <div id="photo-field" hidden>
+                    <input type="file" id="p-photo" accept="image/*">
+                    <img id="photo-preview" class="photo-preview" alt="معاينة الصورة" hidden>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="primary-btn" id="submit-btn">إضافة المنتج</button>
+                <button type="button" class="ghost-btn" id="cancel-edit" hidden>إلغاء</button>
+            </div>
+
+        </form>
+    </section>
+
+    <!-- List -->
+    <section class="panel">
+        <div class="storage-note">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>
+                المنتجات متخزنة دلوقتي في قاعدة بيانات حقيقية على السيرفر (SQLite)،
+                فأي منتج تضيفيه أو تعدليه هيظهر لكل زوار الموقع، مش بس عندك.
+                لازم السيرفر يكون شغال (npm start) عشان الموقع يشتغل.
+            </span>
+        </div>
+
+        <div class="list-header">
+            <h2>المنتجات الحالية <span id="product-count">0</span></h2>
+        </div>
+
+        <div id="admin-product-list"></div>
+
+        <p id="empty-state" hidden>لسه مفيش منتجات، ضيفي أول منتج من الفورم 🌸</p>
+    </section>
+
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
