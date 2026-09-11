@@ -1,0 +1,47 @@
+[
+  {
+    "id": "p1",
+    "name": "Velvet Rose Lipstick",
+    "price": 320,
+    "oldPrice": 400,
+    "rating": 5,
+    "image": "/uploads/product-1789166830614-79561214.jpg",
+    "imageType": "photo"
+  },
+  {
+    "id": "p2",
+    "name": "Pink Dream Blush",
+    "price": 280,
+    "oldPrice": 350,
+    "rating": 5,
+    "image": "/uploads/product-1789166821247-922541251.jpg",
+    "imageType": "photo"
+  },
+  {
+    "id": "p3",
+    "name": "Glow Eyeshadow Palette",
+    "price": 450,
+    "oldPrice": 550,
+    "rating": 5,
+    "image": "/uploads/product-1789166810536-185520252.jpg",
+    "imageType": "photo"
+  },
+  {
+    "id": "pmtxjamon644",
+    "name": "روج",
+    "price": 320,
+    "oldPrice": 400,
+    "rating": 5,
+    "image": "/uploads/product-1789166090323-804146579.jpg",
+    "imageType": "photo"
+  },
+  {
+    "id": "pmtxjexsl161",
+    "name": "روج",
+    "price": 320,
+    "oldPrice": 400,
+    "rating": 5,
+    "image": "/uploads/product-1789166291345-673520061.jpg",
+    "imageType": "photo"
+  }
+]
