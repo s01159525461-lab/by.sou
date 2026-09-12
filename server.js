@@ -228,6 +228,8 @@ app.use((err, req, res, next) => {
     next();
 });
 
-app.listen(PORT, () => {
-    console.log(`✅ سيرفر by-sou شغال على http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => console.log(`سيرفر شغال محلياً على port ${PORT}`));
+}
+
+module.exports = app;
